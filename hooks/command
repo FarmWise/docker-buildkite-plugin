@@ -292,6 +292,11 @@ if [[ -n "${BUILDKITE_PLUGIN_DOCKER_IPC:-}" ]] ; then
   args+=("--ipc" "${BUILDKITE_PLUGIN_DOCKER_IPC:-}")
 fi
 
+# Support docker run --gpus
+if [[ -n "${BUILDKITE_PLUGIN_DOCKER_GPUS:-}" ]]; then
+  args+=("--gpus" "${BUILDKITE_PLUGIN_DOCKER_GPUS}")
+fi
+
 shell=()
 shell_disabled=1
 

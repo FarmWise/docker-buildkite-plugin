@@ -63,6 +63,8 @@ configuration:
       type: boolean
     sysctls:
       type: array
+    gpus:
+      type: string
   required:
     - image
   additionalProperties: false
